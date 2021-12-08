@@ -16,6 +16,21 @@ public class EXReanimatedPackage implements Package {
   @Override
   public List<? extends ReactNativeHostHandler> createReactNativeHostHandlers(Context context) {
     final ReactNativeHostHandler handler = new ReactNativeHostHandler() {
+      @Override 
+      public ReactInstanceManager createReactInstanceManager(boolean useDeveloperSupport) { 
+          return null; 
+      } 
+  
+      @Override 
+      public String getJSBundleFile(boolean useDeveloperSupport) { 
+          return null; 
+      } 
+  
+      @Override 
+      public String getBundleAssetName(boolean useDeveloperSupport) { 
+          return null; 
+      } 
+      
       @Override
       public void onRegisterJSIModules(ReactApplicationContext reactApplicationContext, JavaScriptContextHolder jsContext, boolean useDeveloperSupport) {
         EXReanimatedAdapter.registerJSIModules(reactApplicationContext, jsContext);
@@ -24,3 +39,5 @@ public class EXReanimatedPackage implements Package {
     return Collections.singletonList(handler);
   }
 }
+
+
